@@ -2,6 +2,6 @@ language: python
 python:
     3.5
 script:
-    py.test --cov=.
+    py.test --cov=rpn.py
 after_success:
     coveralls
