@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import operator
-import colored
+from colorama import Fore, Back, Style
 
 operators = {
     '+': operator.add,
@@ -32,12 +32,14 @@ def calculate(myarg):
 def main():
     while True:
         result = calculate(input("rpn calc> "))
+        print("Result: ", end='')
         if result > 0:
-            color = fg('blue')
+            print(Fore.BLUE, end='')
         elif result < 0:
-            color = fg('red')
+            print(Fore.RED, end='')
         else:
-            color = fg('white')
-        print("Result: ", result, color)
+            print(Fore.WHITE, end='')
+        print(result)
+        print(Style.RESET_ALL, end='')
 if __name__ == '__main__':
     main()
