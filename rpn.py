@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import operator
-
+import colored
 
 operators = {
     '+': operator.add,
@@ -32,7 +32,12 @@ def calculate(myarg):
 def main():
     while True:
         result = calculate(input("rpn calc> "))
-        print("Result: ", result)
-
+        if result > 0:
+            color = fg('blue')
+        elif result < 0:
+            color = fg('red')
+        else:
+            color = fg('white')
+        print("Result: ", result, color)
 if __name__ == '__main__':
     main()
